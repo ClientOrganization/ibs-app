@@ -1,37 +1,73 @@
 <template>
   <header
-    class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-secondary"
+    :class="[
+      'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b',
+      isScrolled
+        ? 'bg-white/90 backdrop-blur-md shadow-md border-brand-secondary'
+        : 'bg-transparent border-transparent',
+    ]"
   >
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-4">
         <img src="/logo.png" alt="IBS Logo" class="h-10" />
         <div class="hidden md:block">
-          <h1 class="text-lg font-semibold text-gray-900">
+          <h1
+            class="text-lg font-semibold"
+            :class="isScrolled ? 'text-gray-900' : 'text-white'"
+          >
             International Business Synergies
           </h1>
-          <p class="text-xs text-gray-500">Trading FZCO</p>
+          <p
+            class="text-xs"
+            :class="isScrolled ? 'text-gray-500' : 'text-gray-200'"
+          >
+            Trading FZCO
+          </p>
         </div>
       </div>
       <nav class="hidden md:block">
         <ul class="flex space-x-8">
           <li>
-            <a href="#about" class="nav-link">About Us</a>
+            <a
+              href="#about"
+              class="nav-link"
+              :class="{ 'nav-link-light': !isScrolled }"
+              >About Us</a
+            >
           </li>
           <li>
-            <a href="#global-trade" class="nav-link">Global Trade</a>
+            <a
+              href="#global-trade"
+              class="nav-link"
+              :class="{ 'nav-link-light': !isScrolled }"
+              >Global Trade</a
+            >
           </li>
           <li>
-            <a href="#energy" class="nav-link">Energy</a>
+            <a
+              href="#energy"
+              class="nav-link"
+              :class="{ 'nav-link-light': !isScrolled }"
+              >Energy</a
+            >
           </li>
           <li>
-            <a href="#commodities" class="nav-link">Commodities</a>
+            <a
+              href="#commodities"
+              class="nav-link"
+              :class="{ 'nav-link-light': !isScrolled }"
+              >Commodities</a
+            >
           </li>
           <li>
             <a href="#contact" class="nav-link contact-button">Contact</a>
           </li>
         </ul>
       </nav>
-      <button class="block md:hidden focus:outline-none text-brand-primary">
+      <button
+        class="block md:hidden focus:outline-none"
+        :class="isScrolled ? 'text-brand-primary' : 'text-white'"
+      >
         <svg
           class="w-6 h-6"
           fill="none"
@@ -52,20 +88,46 @@
 </template>
 
 <script setup lang="ts">
-// Mobile menu functionality can be added here
+import { ref, onMounted, onUnmounted } from "#imports";
+
+const isScrolled = ref(false);
+const lastScrollPosition = ref(0);
+
+const handleScroll = () => {
+  const currentScrollPosition =
+    window.pageYOffset || document.documentElement.scrollTop;
+
+  // Add a small threshold (e.g., 50px) before changing the background
+  isScrolled.value = currentScrollPosition > 50;
+
+  lastScrollPosition.value = currentScrollPosition;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+  // Check scroll position immediately in case page is loaded scrolled down
+  handleScroll();
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>
 
 <style scoped>
 header {
-  backdrop-filter: blur(5px);
-  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
 }
 
 .nav-link {
   color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
   position: relative;
+}
+
+.nav-link-light {
+  color: white;
 }
 
 .nav-link:hover {
