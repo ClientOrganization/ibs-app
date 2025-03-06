@@ -10,24 +10,28 @@
     >
       <div class="absolute inset-0 z-0">
         <img
-          src="/hero-bg.gif"
+          src="/hero-bg.jpg"
           alt="IBS Trading Ship"
-          class="object-cover h-full w-full opacity-40 scale-110"
+          class="object-cover h-full w-full opacity-40 scale-110 animate-slow-pan"
         />
       </div>
       <div
         class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent z-0"
       ></div>
       <div class="container mx-auto px-6 z-10 text-center">
-        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+        <h1
+          class="text-5xl md:text-6xl font-bold text-white mb-6 animate-fade-in"
+        >
           International Business Synergies
         </h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+        <p
+          class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-delayed"
+        >
           A global trading company specializing in energy, agriculture, and
           aquaculture commodities
         </p>
         <button
-          class="inline-flex items-center justify-center h-11 px-8 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
+          class="inline-flex items-center justify-center h-11 px-8 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 animate-fade-in-delayed-more"
         >
           <a href="#about">Learn More</a>
         </button>
@@ -372,7 +376,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Additional custom styles can be added here */
+/* Animation styles */
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -383,5 +387,46 @@ html {
   100% {
     transform: translateY(0px);
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slowPan {
+  0% {
+    transform: scale(1.1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.15) translate(-1%, -1%);
+  }
+  100% {
+    transform: scale(1.1) translate(0, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-delayed {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+.animate-fade-in-delayed-more {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.6s forwards;
+}
+
+.animate-slow-pan {
+  animation: slowPan 30s ease-in-out infinite;
 }
 </style>

@@ -1,6 +1,19 @@
 <template>
-  <footer class="bg-gray-900 text-white py-16">
-    <div class="container mx-auto px-6">
+  <footer class="relative text-white py-16">
+    <!-- Background image -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/footer-bg.jpg"
+        alt="Shipping Background"
+        class="w-full h-full object-cover opacity-30"
+      />
+    </div>
+
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-gray-900 opacity-80 z-0"></div>
+
+    <!-- Content -->
+    <div class="container mx-auto px-6 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
           <div class="flex items-center space-x-4 mb-6">
@@ -62,4 +75,19 @@
 
 <style scoped>
 /* Add your styles here */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa);
+}
+
+/* Additional background image styling */
+footer {
+  background-position: center;
+  background-size: cover;
+}
 </style>
