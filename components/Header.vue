@@ -60,7 +60,12 @@
             >
           </li>
           <li>
-            <a href="#contact" class="nav-link contact-button">Contact</a>
+            <a
+              href="#contact"
+              class="nav-link"
+              :class="{ 'nav-link-light': !isScrolled }"
+              >Contact</a
+            >
           </li>
         </ul>
       </nav>
@@ -147,15 +152,6 @@ header {
 
 .nav-link:hover::after {
   width: 100%;
-}
-
-.contact-button {
-  color: var(--primary-color);
-  font-weight: 600;
-}
-
-.contact-button:hover {
-  color: var(--primary-hover);
 }
 
 .border-brand-secondary {
