@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // Components are auto-imported in Nuxt
+import BrandButton from "~/components/ui/brand-button.vue";
 </script>
 
 <template>
@@ -30,11 +31,9 @@
           A global trading company specializing in energy, agriculture, and
           aquaculture commodities
         </p>
-        <button
-          class="inline-flex items-center justify-center h-11 px-8 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300 animate-fade-in-delayed-more"
-        >
+        <BrandButton variant="primary" class="animate-fade-in-delayed-more">
           <a href="#about">Learn More</a>
-        </button>
+        </BrandButton>
       </div>
     </section>
 
@@ -283,7 +282,7 @@
                   <input
                     type="text"
                     id="name"
-                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary text-white"
                     required
                   />
                 </div>
@@ -294,7 +293,7 @@
                   <input
                     type="email"
                     id="email"
-                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary text-white"
                     required
                   />
                 </div>
@@ -305,13 +304,13 @@
                   <textarea
                     id="message"
                     rows="4"
-                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary text-white"
                     required
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors duration-300"
+                  class="w-full bg-brand-primary hover:bg-brand-primary-hover text-white py-2 px-4 rounded-md transition-colors duration-300"
                 >
                   Send Message
                 </button>
@@ -338,7 +337,7 @@
                   <strong>Email:</strong>
                   <a
                     href="mailto:info@ibsltd.com"
-                    class="text-blue-400 hover:underline ml-2"
+                    class="text-brand-primary hover:text-brand-primary-hover ml-2"
                     >info@ibsltd.com</a
                   >
                 </p>
@@ -346,7 +345,7 @@
                   <strong>Phone:</strong>
                   <a
                     href="tel:+971586271722"
-                    class="text-blue-400 hover:underline ml-2"
+                    class="text-brand-primary hover:text-brand-primary-hover ml-2"
                     >+971 58-627-1722</a
                   >
                 </p>
