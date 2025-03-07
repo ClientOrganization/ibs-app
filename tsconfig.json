@@ -8,6 +8,8 @@
       "vue": ["./node_modules/vue"],
       "~/*": ["./*"],
       "@/*": ["./*"]
-    }
+    },
+    "forceConsistentCasingInFileNames": false,
+    "preserveSymlinks": true
   }
 }

@@ -3,7 +3,20 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   ssr: true,
-  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxtjs/color-mode"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
+
+  // Disable shadcn-nuxt module temporarily
+  // modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxtjs/color-mode"],
+
+  // Simple components configuration
+  components: true,
+
+  // Improved imports (important for case sensitivity issues)
+  vite: {
+    resolve: {
+      preserveSymlinks: true,
+    },
+  },
 
   // Nitro configuration for static site generation
   nitro: {

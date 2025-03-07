@@ -102,7 +102,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "#imports";
-import BlurImage from "~/components/ui/BlurImage.vue";
+import BlurImage from "~/components/BlurImage.vue";
 
 const isScrolled = ref(false);
 const lastScrollPosition = ref(0);

@@ -1,12 +1,6 @@
 <script setup lang="ts">
-// Components are auto-imported in Nuxt
-import BrandButton from "~/components/ui/brand-button.vue";
-import BlurImage from "~/components/ui/BlurImage.vue";
-import Card from "~/components/ui/Card.vue";
-import CardHeader from "~/components/ui/CardHeader.vue";
-import CardTitle from "~/components/ui/CardTitle.vue";
-import CardDescription from "~/components/ui/CardDescription.vue";
-import CardContent from "~/components/ui/CardContent.vue";
+// Use auto-imports for all components
+// Nuxt will handle the component resolution
 </script>
 
 <template>

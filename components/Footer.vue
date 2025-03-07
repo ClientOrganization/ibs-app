@@ -76,7 +76,7 @@
 </template>
 
 <script setup lang="ts">
-import BlurImage from "~/components/ui/BlurImage.vue";
+import BlurImage from "~/components/BlurImage.vue";
 // Footer functionality can be added here
 </script>
 

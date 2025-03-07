@@ -5,9 +5,5 @@
 </template>
 
 <script setup>
-// CardTitle component
+// Simple CardTitle component
 </script>
-
-<style scoped>
-/* Any additional styling */
-</style>
