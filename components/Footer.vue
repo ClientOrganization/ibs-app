@@ -2,10 +2,13 @@
   <footer class="relative text-white py-16">
     <!-- Background image -->
     <div class="absolute inset-0 z-0">
-      <img
+      <BlurImage
         src="/footer-bg.jpg"
         alt="Shipping Background"
         class="w-full h-full object-cover opacity-30"
+        loading="lazy"
+        width="1920"
+        height="1080"
       />
     </div>
 
@@ -17,7 +20,15 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
           <div class="flex items-center space-x-4 mb-6">
-            <img src="/logo.png" alt="IBS Logo" class="h-12" />
+            <div class="h-12 w-12">
+              <BlurImage
+                src="/logo.png"
+                alt="IBS Logo"
+                loading="lazy"
+                width="48"
+                height="48"
+              />
+            </div>
             <div>
               <h3 class="text-lg font-semibold text-white">
                 International Business Synergies
@@ -65,6 +76,7 @@
 </template>
 
 <script setup lang="ts">
+import BlurImage from "~/components/ui/BlurImage.vue";
 // Footer functionality can be added here
 </script>
 

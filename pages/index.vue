@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Components are auto-imported in Nuxt
 import BrandButton from "~/components/ui/brand-button.vue";
+import BlurImage from "~/components/ui/BlurImage.vue";
 </script>
 
 <template>
@@ -10,10 +11,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
       class="relative h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden"
     >
       <div class="absolute inset-0 z-0">
-        <img
+        <BlurImage
           src="/hero-bg.jpg"
           alt="IBS Trading Ship"
           class="object-cover h-full w-full opacity-40 scale-110 animate-slow-pan"
+          loading="eager"
+          width="1920"
+          height="1080"
         />
       </div>
       <div
@@ -65,10 +69,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
             </p>
           </div>
           <div class="rounded-lg overflow-hidden shadow-xl h-full">
-            <img
+            <BlurImage
               src="/about-image.png"
               alt="IBS Office"
               class="w-full h-full object-cover"
+              loading="lazy"
+              width="800"
+              height="600"
             />
           </div>
         </div>
@@ -89,10 +96,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
           merchandise, and commodities.
         </p>
         <div class="relative rounded-lg overflow-hidden shadow-xl">
-          <img
+          <BlurImage
             src="/global-map.png"
             alt="IBS Global Presence"
             class="w-full object-contain"
+            loading="lazy"
+            width="1600"
+            height="900"
           />
         </div>
       </div>
@@ -110,10 +120,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
           <!-- Energy Card 1 -->
           <Card>
             <div class="h-48 overflow-hidden">
-              <img
+              <BlurImage
                 src="/oil-gas.jpg"
                 alt="Oil & Gas"
                 class="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="300"
               />
             </div>
             <CardHeader>
@@ -135,10 +148,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
           <!-- Energy Card 2 -->
           <Card>
             <div class="h-48 overflow-hidden">
-              <img
+              <BlurImage
                 src="/petroleum.jpg"
                 alt="Petroleum Products"
                 class="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="300"
               />
             </div>
             <CardHeader>
@@ -157,10 +173,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
           <!-- Energy Card 3 -->
           <Card>
             <div class="h-48 overflow-hidden">
-              <img
+              <BlurImage
                 src="/generators.jpg"
                 alt="Generators"
                 class="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="300"
               />
             </div>
             <CardHeader>
@@ -191,10 +210,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
           <!-- Commodities Card 1 -->
           <Card>
             <div class="h-48 overflow-hidden">
-              <img
+              <BlurImage
                 src="/agriculture.jpg"
                 alt="Agriculture"
                 class="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="300"
               />
             </div>
             <CardHeader>
@@ -213,10 +235,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
           <!-- Commodities Card 2 -->
           <Card>
             <div class="h-48 overflow-hidden">
-              <img
+              <BlurImage
                 src="/aquaculture.jpg"
                 alt="Aquaculture"
                 class="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="300"
               />
             </div>
             <CardHeader>
@@ -235,10 +260,13 @@ import BrandButton from "~/components/ui/brand-button.vue";
           <!-- Commodities Card 3 -->
           <Card>
             <div class="h-48 overflow-hidden">
-              <img
+              <BlurImage
                 src="/fertilizers.jpg"
                 alt="Fertilizers & Animal Feed"
                 class="w-full h-full object-cover"
+                loading="lazy"
+                width="400"
+                height="300"
               />
             </div>
             <CardHeader>

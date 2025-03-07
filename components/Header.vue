@@ -9,7 +9,15 @@
   >
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-4">
-        <img src="/logo.png" alt="IBS Logo" class="h-10" />
+        <div class="h-10 w-10">
+          <BlurImage
+            src="/logo.png"
+            alt="IBS Logo"
+            loading="lazy"
+            width="40"
+            height="40"
+          />
+        </div>
         <div class="hidden md:block">
           <h1
             class="text-lg font-semibold"
@@ -94,6 +102,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "#imports";
+import BlurImage from "~/components/ui/BlurImage.vue";
 
 const isScrolled = ref(false);
 const lastScrollPosition = ref(0);
